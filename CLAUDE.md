@@ -3,12 +3,28 @@
 ## Project Purpose
 Marketing and showcase site for Epic Collection, a curated portfolio of boutique properties along Sri Lanka's southern coast. No booking backend — goal is to surface the properties beautifully and drive enquiries.
 
+**Primary conversion goal:** Get visitors to submit an enquiry (contact/booking form).
+
+## Target Audience
+Local and regional guests — South Asian travellers familiar with Sri Lanka. Design and copy should feel aspirational but not alienating; these are not first-time visitors to the country.
+
+## Status
+Site is live. All work should be production-ready before merging. Vercel deploys automatically on push to `master`.
+
+**Live URL:** https://epic-collection-website.vercel.app
+**GitHub:** https://github.com/sharu28/epic-leisure-club
+
+## Remaining Work
+- [ ] Contact / enquiry form (dedicated page or modal — primary conversion point)
+- [ ] More journal articles
+
 ## Stack
 - **Framework:** Vite + React (JSX)
 - **Routing:** react-router-dom v7
 - **Styling:** CSS Modules (`.module.css` per component)
 - **Fonts:** Playfair Display (serif) + Inter (sans) via Google Fonts
 - **Dev server:** `npm run dev` → http://localhost:5173 (or next available port)
+- **Deploy:** Vercel (auto-deploy on push to `master`)
 
 ## Design System
 All design tokens are CSS custom properties in `src/index.css`:
@@ -55,11 +71,16 @@ src/
     Collection.jsx/.module.css
     Footer.jsx/.module.css
     PropertyPage.jsx/.module.css  ← shared property detail layout
+    ArticlePage.jsx/.module.css
+    ScrollToTop.jsx
   pages/            ← one file per route
     HomePage.jsx
     EpicUnawatuna.jsx
     BlissByEpic.jsx
     AuraByEpic.jsx
+    JournalPage.jsx/.module.css
+  data/
+    articles.js     ← journal article content
   App.jsx           ← route definitions
   main.jsx          ← BrowserRouter wrapper
   index.css         ← global reset + CSS custom properties
@@ -71,3 +92,4 @@ src/
 - Images use the `loading="lazy"` attribute
 - Hover transitions: `cubic-bezier(0.16, 1, 0.3, 1)` for cinematic easing
 - Never add inline styles except for dynamic values (e.g., index-based heights)
+- All new work must be production-ready — site is live

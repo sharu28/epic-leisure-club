@@ -3,7 +3,14 @@ import styles from './Hero.module.css';
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.heroBg} />
+      <video
+        className={styles.heroBg}
+        autoPlay
+        muted
+        loop
+        playsInline
+        src="/hero-video.mp4"
+      />
       <div className={styles.heroScrim} />
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
