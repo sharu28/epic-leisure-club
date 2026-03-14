@@ -1,0 +1,87 @@
+.bookingSection {
+  background-color: var(--color-bg-dark);
+  padding: 4rem var(--layout-padding);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bookingGrid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: end;
+}
+
+.bookingField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.bookingLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.bookingValue {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.bookingValue:hover {
+  color: var(--color-off-white);
+}
+
+.bookingAction {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+}
+
+.btnReserve {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.btnReserve::after {
+  content: '→';
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.btnReserve:hover::after {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .bookingGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .bookingAction {
+    grid-column: span 2;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+}

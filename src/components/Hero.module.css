@@ -1,0 +1,106 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1590076214959-1e3df6a1618d?q=80&w=2835&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center 70%;
+  z-index: 1;
+}
+
+.heroScrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+}
+
+.heroTitle strong {
+  font-weight: 500;
+}
+
+/* Handwritten underline on "story" */
+.storyWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.storyUnderline {
+  position: absolute;
+  left: -5%;
+  bottom: -0.35em;
+  width: 110%;
+  height: 0.45em;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.storyUnderline path {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  animation: drawUnderline 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+@keyframes drawUnderline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.brandMarker {
+  position: absolute;
+  bottom: var(--layout-padding);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.serif {
+  font-family: var(--font-serif);
+}

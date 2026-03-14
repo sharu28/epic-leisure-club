@@ -1,0 +1,18 @@
+.manifesto {
+  padding: 8rem var(--layout-padding);
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manifesto p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.4;
+  color: var(--color-off-white);
+}
+
+.manifesto p span {
+  font-style: italic;
+  color: var(--color-white);
+}

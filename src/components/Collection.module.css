@@ -1,0 +1,133 @@
+.villaLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.collection {
+  padding: 0 var(--layout-padding) 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6rem, 15vw, 12rem);
+}
+
+.villaItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.villaImageContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.villaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.villaItem:hover .villaImage {
+  transform: scale(1.03);
+}
+
+.villaMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.villaLocation {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.villaLocation::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--color-text-muted);
+}
+
+.villaTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.villaSpecs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.specLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.specValue {
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.villaDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+@media (min-width: 1024px) {
+  .odd {
+    grid-template-columns: 60% 35%;
+    justify-content: space-between;
+  }
+
+  .even {
+    grid-template-columns: 35% 60%;
+    justify-content: space-between;
+  }
+
+  .even .villaImageContainer {
+    order: 2;
+  }
+
+  .even .villaMeta {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .villaImageContainer {
+    height: 50vh !important;
+  }
+
+  .villaSpecs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
